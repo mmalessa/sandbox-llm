@@ -1,0 +1,37 @@
+### Emotion negative
+POST http://localhost:11434/v1/chat/completions
+Content-Type: application/json
+
+{
+  "model": "llama3.1:8b",
+  "temperature": 0,
+  "messages": [
+    {
+      "role": "system",
+      "content": "You analyze emotional tone of text."
+    },
+    {
+      "role": "user",
+      "content": "Analyze emotional tone.\n\nReturn only JSON:\n{\n  \"sentiment\": \"positive | neutral | negative\",\n  \"emotions\": [],\n  \"intensity\": 0-100,\n  \"explanation\": \"\"\n}\n\nText:\n\"Czuję się kompletnie ignorowany i mam wrażenie, że nikogo to nie obchodzi.\""
+    }
+  ]
+}
+
+### Emotion positive
+POST http://localhost:11434/v1/chat/completions
+Content-Type: application/json
+
+{
+  "model": "llama3.1:8b",
+  "temperature": 0,
+  "messages": [
+    {
+      "role": "system",
+      "content": "You analyze emotional tone of text."
+    },
+    {
+      "role": "user",
+      "content": "Analyze emotional tone.\n\nReturn only JSON:\n{\n  \"sentiment\": \"positive | neutral | negative\",\n  \"emotions\": [],\n  \"intensity\": 0-100,\n  \"explanation\": \"\"\n}\n\nText:\n\"Ależ dzisiaj piękna pogoda.\""
+    }
+  ]
+}
