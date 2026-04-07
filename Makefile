@@ -19,17 +19,14 @@ up: ## Up all
 down: ## Down all
 	@$(DC) down
 
-.PHONY: shell
-shell: ## Enter application go-client container
-	@$(DC) exec -it go-client bash
+.PHONY: logs
+logs: ## Ollama logs
+	@$(DC) logs -f ollama
 
 # https://ollama.com/library
-.PHONY: fetch-models ## Download Ollama models
+.PHONY: fetch-models ## Download + prepare Ollama models
 fetch-models:
-	@$(DC) exec -it ollama ollama pull llama3.1:8b
-#	@$(DC) exec -it ollama ollama pull qwen3:1.7b
-#	@$(DC) exec -it ollama ollama pull mistral:7b-instruct
-#	@$(DC) exec -it ollama ollama pull nomic-embed-text:latest
+	@$(DC) exec -it ollama bash /scripts/fetch-models.sh
 
 .PHONY: list-models ## Download Ollama models
 list-models:
