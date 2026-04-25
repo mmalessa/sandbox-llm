@@ -17,6 +17,12 @@ services:
               count: all
               capabilities: [gpu]
     restart: unless-stopped
+    networks:
+      - my-network
 
 volumes:
   ollama_models:
+
+networks:
+  my-network:
+    name: my-network
