@@ -55,7 +55,7 @@ You can pull any model from the [Ollama library](https://ollama.com/library) or 
 https://opencode.ai/
 
 
-`~/config/opencode/opencode.json`
+`~/.config/opencode/opencode.json`
 ```json
 {
   "$schema": "https://opencode.ai/config.json",

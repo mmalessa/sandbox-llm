@@ -19,6 +19,10 @@ up: ## Up all
 down: ## Down all
 	@$(DC) down
 
+.PHONY: sh
+sh: ## Open a shell in the Ollama container
+	@$(DC) exec -it ollama bash
+
 .PHONY: logs
 logs: ## Ollama logs
 	@$(DC) logs -f ollama
